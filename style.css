@@ -21,7 +21,12 @@
     --secondary-color: #E5B299;
     --tertiary-1-color: #B4846C;
     --tertiary-2-color: #7D5A50;
-
+    --card: #E5B299;
+    --input-bg: #E5B299;
+    --border: #B4846C;
+    --text: #7D5A50;
+    --accent: #7D5A50;
+    --warm-background:#fff4e6;
 }
 
 * {
@@ -60,7 +65,6 @@ section.allElems {
     flex-wrap: wrap;
     align-items: flex-start;
     gap: 20px;
-
 }
 
 .elem {
@@ -72,6 +76,7 @@ section.allElems {
     overflow: hidden;
     position: relative;
     transition: all 0.5s ease;
+    box-shadow: 0 5px 10px var(--tertiary-1-color);
 }
 
 .elem img {
@@ -98,7 +103,198 @@ section.allElems {
     width: 100%;
     background-color: var(--tertiary-2-color);
     padding: 20px;
-    font-weight: 600;
     display: none;
+    position: absolute;
+}
 
+.back {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 25px;
+    cursor: pointer;
+    background-color: var(--tertiary-2-color);
+    border: none;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+}
+
+.back:active {
+    scale: 0.50;
+}
+
+.todo-list-page {
+    display: block;
+}
+
+.todo-list-page h1 {
+    font-size: 40px;
+    margin-bottom: 20px
+}
+
+.todo-list-page .todo-container {
+    height: 85%;
+    width: 100%;
+    display: flex;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.todo-list-page .todo-container .addTask {
+    width: 34%;
+    height: 100%;
+    background-color: var(--secondary-color);
+}
+
+.todo-list-page .todo-container .allTask {
+    width: 64%;
+    height: 100%;
+    background-color: var(--secondary-color);
+    overflow: auto;
+
+}
+/* Add Task Panel */
+.todo-list-page .todo-container .addTask {
+    width: 34%;
+    height: 100%;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Modal Container */
+.addTask .modal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Box */
+.addTask .modal-content {
+    height: 100%;
+    width: 100%;
+    background: var(--primary-color);
+    padding: 20px;
+    border-radius: 16px;
+    border: 2px solid var(--border);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* Title */
+.addTask .modal-content h2 {
+    margin-bottom: 16px;
+    color: var(--tertiary-2-color);
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Input + Textarea */
+.addTask .modal-content .field input,
+.addTask .modal-content .field textarea {
+    width: 100%;
+    background: var(--input-bg);
+    border: 2px solid var(--border);
+    padding: 5px 6px;
+
+    border-radius: 12px;
+    color: var(--text);
+    font-size: 14px;
+    outline: none;
+}
+
+.addTask .modal-content .field textarea {
+    resize: none;
+    height: 180px;
+  
+}
+
+.addTask .modal-content .field {
+    margin-bottom: 14px;
+}
+
+/* Add Task Button */
+.addTask .modal-content .add-task-btn {
+    width: 100%;
+    background: var(--tertiary-2-color);
+    color: var(--accent);
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.25s ease;
+    font-weight: 600;
+}
+
+.addTask .modal-content .add-task-btn:hover {
+    background: var(--secondary-color);
+}
+
+.task-card {
+    background-color: var(--warm-background);      
+    border-left: 5px solid var(--tertiary-2-color); 
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 1rem;
+      margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.task-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Task Title */
+.task-card .task-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--tertiary-2-color);
+    margin: 0;
+}
+
+/* Task Description */
+.task-card .task-desc {
+    font-size: 0.95rem;
+    color: var(--text);
+    margin: 0;
+}
+
+/* Task Due Date */
+.task-card .task-date {
+    font-size: 0.85rem;
+    color:var(--tertiary-1-color); 
+    margin: 0;
+    font-style: italic;
+}
+
+/* Complete Button */
+.task-complete-btn {
+    align-self: flex-start;
+    background-color:var(--tertiary-1-color); 
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button Hover */
+.task-complete-btn:hover {
+    background-color:var(--tertiary-2-color); 
+    transform: scale(1.05);
 }
