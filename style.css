@@ -1,300 +1,175 @@
-@font-face {
-    font-family: 'aeonik';
-    font-weight: 900;
-    src: url('./font/Aeonik-Bold.ttf');
-}
-
-@font-face {
-    font-family: 'aeonik';
-    font-weight: 600;
-    src: url('./font/Aeonik-Regular.ttf');
-}
-
-@font-face {
-    font-family: 'aeonik';
-    font-weight: 200;
-    src: url('./font/Aeonik-Regular.ttf');
-}
-
-:root {
-    --primary-color: #FCDEC0;
-    --secondary-color: #E5B299;
-    --tertiary-1-color: #B4846C;
-    --tertiary-2-color: #7D5A50;
-    --card: #E5B299;
-    --input-bg: #E5B299;
-    --border: #B4846C;
-    --text: #7D5A50;
-    --accent: #7D5A50;
-    --warm-background:#fff4e6;
-}
-
+/* ================= VARIABLES ================= */
+/* ================= RESET ================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: var(--primary-color);
-    font-family: 'aeonik';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "aeonik", sans-serif;
 }
 
-html,
 body {
-    height: 100%;
-    width: 100%;
+  background: #f8f5f1;
+  color: #2d2d2d;
 }
 
 #main {
-    height: 100%;
-    width: 100%;
+  width: 100%;
+  min-height: 100vh;
 }
 
-nav {
-    position: fixed;
-    height: 10%;
-    width: 100%;
-    background-color: var(--tertiary-1-color);
+/* ================= HOME PAGE ================= */
+.allElems {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+.allElems .elem {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.allElems .elem img {
+  width: 100%;
+  height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.allElems .elem h2 {
+  padding: 15px;
+  text-align: center;
+  color: #7D5A50;
+}
+.allElems .elem:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-section.allElems {
-    height: 100%;
-    width: 100%;
-    padding: 40px;
-    padding-top: 80px;
-    background-color: var(--tertiary-2-color);
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 20px;
-}
-
-.elem {
-    height: 300px;
-    width: 220px;
-    background-color: var(--secondary-color);
-    font-size: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    transition: all 0.5s ease;
-    box-shadow: 0 5px 10px var(--tertiary-1-color);
-}
-
-.elem img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.elem h2 {
-    font-size: 15px;
-    font-weight: 200;
-    position: absolute;
-    bottom: 5%;
-    right: 5%;
-}
-
-.elem:active {
-    scale: 0.95;
-}
-
+/* ================= FULL PAGES ================= */
 .fullElem {
-    height: 100vh;
-    width: 100%;
-    background-color: var(--tertiary-2-color);
-    padding: 20px;
-    display: none;
-    position: absolute;
+  position: fixed;
+  inset: 0;
+  background: #f8f5f1;
+  padding: 30px;
+  display: none;
+  overflow-y: auto;
+}
+.fullElem.active {
+  display: block;
+}
+.fullElem h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #7D5A50;
+}
+.fullElem .back {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: none;
+  background: #7D5A50;
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
 }
 
-.back {
-    position: absolute;
-    top: 5%;
-    right: 5%;
-    font-size: 25px;
-    cursor: pointer;
-    background-color: var(--tertiary-2-color);
-    border: none;
-    border-radius: 50%;
-    transition: all 0.5s ease;
+/* ================= TODO PAGE ================= */
+.todo-container {
+  height: 97%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: #2c2c2c;
 }
-
-.back:active {
-    scale: 0.50;
+.todo-container .addTask {
+  width: 34%;
+  height: 90%;
+  background: #E5B299;
+  padding: 20px;
+  border-radius: 16px;
 }
-
-.todo-list-page {
-    display: block;
+.todo-container .addTask h3 {
+  margin-bottom: 15px;
+  color: #7D5A50;
 }
-
-.todo-list-page h1 {
-    font-size: 40px;
-    margin-bottom: 20px
+.todo-container .addTask input,
+.todo-container .addTask textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
 }
-
-.todo-list-page .todo-container {
-    height: 85%;
-    width: 100%;
-    display: flex;
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
+.todo-container .addTask textarea {
+  resize: none;
+  height: 250px;
 }
-
-.todo-list-page .todo-container .addTask {
-    width: 34%;
-    height: 100%;
-    background-color: var(--secondary-color);
+.todo-container .addTask .actions {
+  display: flex;
+  gap: 10px;
 }
-
-.todo-list-page .todo-container .allTask {
-    width: 64%;
-    height: 100%;
-    background-color: var(--secondary-color);
-    overflow: auto;
-
+.todo-container .addTask .actions button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
 }
-/* Add Task Panel */
-.todo-list-page .todo-container .addTask {
-    width: 34%;
-    height: 100%;
-    background-color: var(--secondary-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+.todo-container .addTask .actions #addTask {
+  background: #7D5A50;
+  color: #ffffff;
 }
-
-/* Modal Container */
-.addTask .modal {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.todo-container .addTask .actions #clearTask {
+  background: #B4846C;
+  color: #ffffff;
 }
-
-/* Modal Box */
-.addTask .modal-content {
-    height: 100%;
-    width: 100%;
-    background: var(--primary-color);
-    padding: 20px;
-    border-radius: 16px;
-    border: 2px solid var(--border);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+.todo-container .allTask {
+  width: 64%;
+  height: 90%;
+  display: grid;
+  gap: 15px;
+  overflow: auto;
 }
-
-/* Title */
-.addTask .modal-content h2 {
-    margin-bottom: 16px;
-    color: var(--tertiary-2-color);
-    font-size: 22px;
-    font-weight: 600;
-    text-align: center;
+.todo-container .allTask .empty {
+  text-align: center;
+  padding: 25px 20px;
+  font-size: 16px;
+  color: #7D5A50;
+  background: #2c2c2c;
+  border-radius: 12px;
+  opacity: 0.7;
 }
-
-/* Input + Textarea */
-.addTask .modal-content .field input,
-.addTask .modal-content .field textarea {
-    width: 100%;
-    background: var(--input-bg);
-    border: 2px solid var(--border);
-    padding: 5px 6px;
-
-    border-radius: 12px;
-    color: var(--text);
-    font-size: 14px;
-    outline: none;
+.todo-container .allTask .task {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 12px;
 }
-
-.addTask .modal-content .field textarea {
-    resize: none;
-    height: 180px;
-  
+.todo-container .allTask .task h4 {
+  color: #7D5A50;
 }
-
-.addTask .modal-content .field {
-    margin-bottom: 14px;
+.todo-container .allTask .task p {
+  margin: 6px 0;
+  font-size: 14px;
 }
-
-/* Add Task Button */
-.addTask .modal-content .add-task-btn {
-    width: 100%;
-    background: var(--tertiary-2-color);
-    color: var(--accent);
-    border: none;
-    padding: 12px;
-    border-radius: 12px;
-    font-size: 15px;
-    cursor: pointer;
-    transition: 0.25s ease;
-    font-weight: 600;
+.todo-container .allTask .task span {
+  font-size: 12px;
+  color: gray;
 }
-
-.addTask .modal-content .add-task-btn:hover {
-    background: var(--secondary-color);
-}
-
-.task-card {
-    background-color: var(--warm-background);      
-    border-left: 5px solid var(--tertiary-2-color); 
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    margin-bottom: 1rem;
-      margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* Hover effect */
-.task-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-
-/* Task Title */
-.task-card .task-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--tertiary-2-color);
-    margin: 0;
-}
-
-/* Task Description */
-.task-card .task-desc {
-    font-size: 0.95rem;
-    color: var(--text);
-    margin: 0;
-}
-
-/* Task Due Date */
-.task-card .task-date {
-    font-size: 0.85rem;
-    color:var(--tertiary-1-color); 
-    margin: 0;
-    font-style: italic;
-}
-
-/* Complete Button */
-.task-complete-btn {
-    align-self: flex-start;
-    background-color:var(--tertiary-1-color); 
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-/* Button Hover */
-.task-complete-btn:hover {
-    background-color:var(--tertiary-2-color); 
-    transform: scale(1.05);
-}
+.todo-container .allTask .task button {
+  margin-top: 10px;
+  padding: 6px 10px;
+  border: none;
+  background: crimson;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

@@ -2,126 +2,83 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Productivity App</title>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
     <div id="main">
-        <nav></nav>
+
+        <!-- HOME -->
         <section class="allElems">
-            <div class="todo elem" id="0">
-                <img src="https://images.pexels.com/photos/13062588/pexels-photo-13062588.jpeg" alt="">
+            <div class="elem" data-page="todo">
+                <img src="https://images.pexels.com/photos/13062588/pexels-photo-13062588.jpeg">
                 <h2>Todo List</h2>
             </div>
-            <div class="daily elem" id="1">
-                <img src="https://images.pexels.com/photos/7676871/pexels-photo-7676871.jpeg" alt="">
+            <div class="elem" data-page="planner">
+                <img src="https://images.pexels.com/photos/7676871/pexels-photo-7676871.jpeg">
                 <h2>Daily Planner</h2>
             </div>
-            <div class="motivation elem" id="2">
-                <img src="https://images.pexels.com/photos/30133148/pexels-photo-30133148.jpeg" alt="">
+            <div class="elem" data-page="motivation">
+                <img src="https://images.pexels.com/photos/30133148/pexels-photo-30133148.jpeg">
                 <h2>Motivation</h2>
             </div>
-            <div class="pomodoro elem" id="3">
-                <img src="https://images.pexels.com/photos/29738253/pexels-photo-29738253.jpeg" alt="">
+            <div class="elem" data-page="pomodoro">
+                <img src="https://images.pexels.com/photos/29738253/pexels-photo-29738253.jpeg">
                 <h2>Pomodoro</h2>
             </div>
-            <div class="goals elem" id="4">
-                <img src="https://images.pexels.com/photos/30018099/pexels-photo-30018099.jpeg" alt="">
-                <h2>Daily goals</h2>
+            <div class="elem" data-page="goals">
+                <img src="https://images.pexels.com/photos/30018099/pexels-photo-30018099.jpeg">
+                <h2>Daily Goals</h2>
             </div>
         </section>
-        <section class="fullElem todo-list-page">
-            <button class="back" id="0"><i class="ri-close-fill"></i></button>
-            <h2>Your Customized To-Do List</h2>
+
+        <!-- TODO PAGE -->
+        <section class="fullElem todo-page">
+            <button class="back"><i class="ri-close-fill"></i></button>
+            <h1>Todo List</h1>
+
             <div class="todo-container">
                 <div class="addTask">
-                    <div class="modal" id="addTaskModal">
-                        <div class="modal-content">
-                            <h2>Add New Task</h2>
-                            <div class="field"><input type="text" id="task-title-input" placeholder="Task Title" />
-                            </div>
-                            <div class="field"><textarea id="task-desc-input" placeholder="Task Description"></textarea>
-                            </div>
-                            <div class="field"><input type="date" id="task-date" /></div>
-                            <button id="add-new-task" class="add-task-btn">Add Task</button>
-                        </div>
+                    <h3>Add Task</h3>
+                    <input id="title" placeholder="Task title">
+                    <textarea id="desc" placeholder="Description"></textarea>
+                    <input type="date" id="date">
+
+                    <div class="actions">
+                        <button id="addTask">Add</button>
+                        <button id="clearTask">Clear</button>
                     </div>
                 </div>
-                <div class="allTask">
-                    <div class="task-card">
-                        <h3 class="task-title">Finish JavaScript Project</h3>
-                        <p class="task-desc">Complete the final version of the to-do list app with styling and modal
-                            functionality.</p>
-                        <p class="task-date">Due: 2026-01-05</p>
-                        <button class="task-complete-btn">Mark as Done</button>
-                    </div>
-                    <div class="task-card">
-                        <h3 class="task-title">Finish JavaScript Project</h3>
-                        <p class="task-desc">Complete the final version of the to-do list app with styling and modal
-                            functionality.</p>
-                        <p class="task-date">Due: 2026-01-05</p>
-                        <button class="task-complete-btn">Mark as Done</button>
-                    </div>
-                    <div class="task-card">
-                        <h3 class="task-title">Finish JavaScript Project</h3>
-                        <p class="task-desc">Complete the final version of the to-do list app with styling and modal
-                            functionality.</p>
-                        <p class="task-date">Due: 2026-01-05</p>
-                        <button class="task-complete-btn">Mark as Done</button>
-                    </div>
-                    <div class="task-card">
-                        <h3 class="task-title">Finish JavaScript Project</h3>
-                        <p class="task-desc">Complete the final version of the to-do list app with styling and modal
-                            functionality.</p>
-                        <p class="task-date">Due: 2026-01-05</p>
-                        <button class="task-complete-btn">Mark as Done</button>
-                    </div>
-                    <div class="task-card">
-                   
-                            <h3 class="task-title">Finish JavaScript Project</h3>
-                            <p class="task-desc">Complete the final version of the to-do list app with styling and modal
-                                functionality.</p>
-                            <p class="task-date">Due: 2026-01-05</p>
-                       
-                        <button class="task-complete-btn">Mark as Done</button>
-                    </div>
-                    <div class="task-card">
-                        <h3 class="task-title">Finish JavaScript Project</h3>
-                        <p class="task-desc">Complete the final version of the to-do list app with styling and modal
-                            functionality.</p>
-                        <p class="task-date">Due: 2026-01-05</p>
-                        <button class="task-complete-btn">Mark as Done</button>
-                    </div>
-                    <div class="task-card">
-                        <h3 class="task-title">Finish JavaScript Project</h3>
-                        <p class="task-desc">Complete the final version of the to-do list app with styling and modal
-                            functionality.</p>
-                        <p class="task-date">Due: 2026-01-05</p>
-                        <button class="task-complete-btn">Mark as Done</button>
-                    </div>
 
+                <div class="allTask">
+                        <p class="empty">No tasks added yet</p>
                 </div>
             </div>
         </section>
-        <section class="fullElem daily-planner-page">
-            <button class="back" id="1"><i class="ri-close-fill"></i></button>
+
+        <!-- OTHER PAGES -->
+        <section class="fullElem planner-page">
+            <button class="back"><i class="ri-close-fill"></i></button>
             <h1>Daily Planner</h1>
         </section>
+
         <section class="fullElem motivation-page">
-            <button class="back" id="2"><i class="ri-close-fill"></i></button>
-            <h1>Motivation page</h1>
+            <button class="back"><i class="ri-close-fill"></i></button>
+            <h1>Motivation</h1>
         </section>
+
         <section class="fullElem pomodoro-page">
-            <button class="back" id="3"><i class="ri-close-fill"></i></button>
-            <h1>Pomodoro page</h1>
+            <button class="back"><i class="ri-close-fill"></i></button>
+            <h1>Pomodoro</h1>
         </section>
-        <section class="fullElem daily-goals-page">
-            <button class="back" id="4"><i class="ri-close-fill"></i></button>
-            <h1>Daily goals page</h1>
+
+        <section class="fullElem goals-page">
+            <button class="back"><i class="ri-close-fill"></i></button>
+            <h1>Daily Goals</h1>
         </section>
 
     </div>
