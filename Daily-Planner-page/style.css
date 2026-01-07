@@ -11,62 +11,137 @@ body {
 }
 
 :root {
-  --background-color: #f8f5f1;
-  --primary-color: #7D5A50;
-  --secondary-color: #E5B299;
-  --accent-color: #B4846C;
-  --text-color: #2d2d2d;
-  --white-color: #ffffff;
+  --bg-color: #f4f4f4;
+  --planner-bg: #fff;
+  --text-color: #000;
+  --past-color: #f0f0f0;
+  --present-color: #ffcccb;
+  --future-color: #c0ffc0;
+  --button-bg: #007bff;
+  --button-hover: #0056b3;
+  --clear-bg: #ff4c4c;
+  --clear-hover: #c70000;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --planner-bg: #1e1e1e;
+  --text-color: #e0e0e0;
+  --past-color: #2b2b2b;
+  --present-color: #ff6b6b;
+  --future-color: #4caf50;
+  --button-bg: #4a90e2;
+  --button-hover: #357abd;
+  --clear-bg: #e53935;
+  --clear-hover: #b71c1c;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
 
 main {
-  height: 100vh;
-  width: 100vw;
-  background-color: var(--primary-color);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--planner-bg);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
-main nav {
-  height: 10vh;
-  width: 100vw;
-  background-color: var(--secondary-color);
+main .navbar-1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: var(--planner-bg);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+main .navbar-1 .navbar__title h2 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+main .navbar-1 .navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 150px;
+}
+main .navbar-1 .navbar__links .navbar__link {
+  position: relative;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+  padding: 6px 0;
+}
+main .navbar-1 .navbar__links .navbar__link:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  color: var(--button-bg);
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+}
+main .navbar-1 .navbar__links .navbar__link:after::after {
+  width: 100%;
+}
+main .navbar-1 .navbar__links .navbar__link:hover {
+  color: var(--button-bg);
+}
+main .navbar-1 .theme-toggle-container .theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+main .navbar-1 .theme-toggle-container .theme-toggle:hover {
+  color: var(--button-bg);
+}
+main .navbar-2 {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
+  padding: 15px 20px;
+  background-color: var(--planner-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-bottom: 20px;
 }
-main nav h2 {
+main .navbar-2 .current-date {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
   color: var(--text-color);
-  font-size: 2rem;
 }
-main .planner-container {
-  height: 90vh;
-  width: 100vw;
-  background-color: var(--primary-color);
-}
-main .planner-container .planed-tasks {
-  height: 100%;
-  width: 60%;
-  margin: auto;
-  background-color: var(--background-color);
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-main .planner-container .planed-tasks .time-block {
+main .navbar-2 .hours-container {
   display: flex;
-  align-items: center;
-  margin-bottom: 15px;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
 }
-main .planner-container .planed-tasks .hour {
-  width: 15%;
-  text-align: right;
-  padding-right: 10px;
-  font-weight: bold;
-  color: var(--text-color);
-}
-main .planner-container .planed-tasks .description {
-  width: 70%;
-  padding: 10px;
-  border: 1px solid var(--accent-color);
+main .navbar-2 .clear-btn {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: var(--clear-bg);
+  border: none;
   border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
   font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+main .navbar-2 .clear-btn:hover {
+  background-color: var(--clear-hover);
 }/*# sourceMappingURL=style.css.map */

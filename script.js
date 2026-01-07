@@ -4,8 +4,15 @@ document.querySelectorAll(".elem").forEach(elem => {
     elem.addEventListener("click", () => {
         const page = elem.dataset.page;
 
-        if (page === "todo") {
-            window.location.href = "./Todo page/index.html";
+        const routes = {
+            todo: "./Todo page/index.html",
+            planner: "./Daily-Planner-page/index.html",
+            pomodoro: "./Pomodoro-page/index.html",
+            goals: "./Daily-Goals-page/index.html"
+        };
+
+        if (routes[page]) {
+            window.location.href = routes[page];
         }
     });
 });
@@ -13,3 +20,6 @@ document.querySelectorAll(".elem").forEach(elem => {
 document.querySelector(".back").addEventListener("click", () => {
     window.location.href = "../index.html";
 });
+
+
+

@@ -4,27 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Planner</title>
-    <link rel="stylesheet" href="style.css">
+    <title> Daily Planner </title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 
 <body>
     <main>
-        <nav>
-            <h2>Plan your day to be more productive</h2>
-        </nav>
-        <section class="planner-container">
-            <div class="planed-task">
-                <div class="time-block" id="hour-9"></div>
-                <div class="hour">9 AM</div>
-                <textarea class="description"></textarea>
-                <button class="saveBtn">Save</button>
+        <navbar class="navbar-1">
+            <div class="navbar__title">
+                <h1> Daily Planner </h1>
             </div>
-        </section>
+            <div class="navbar__links">
+                <a href="http://127.0.0.1:5500/index.html" class="navbar__link"> Home </a>
+                <a href="#" class="navbar__link"> To-Do List </a>
+                <a href="#" class="navbar__link"> Calendar </a>
+            </div>
+            <div class="theme-toggle-container">
+                <button class="theme-toggle"><i class="ri-moon-fill"></i></button>
+            </div>
+        </navbar>
+        <navbar2 class="navbar-2">
+            <div>
+                <div class="current-date"></div>
+                <div class="hours-container"></div>
+                <button class="clear-btn">Clear All Tasks</button>
+            </div>
+        </navbar2>
 
+<script src="script.js"></script>
     </main>
-
-    <script src="script.js"></script>
 </body>
 
 </html>
