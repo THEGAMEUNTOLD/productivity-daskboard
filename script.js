@@ -7,6 +7,7 @@ document.querySelectorAll(".elem").forEach(elem => {
         const routes = {
             todo: "./Todo page/index.html",
             planner: "./Daily-Planner-page/index.html",
+            motivation: "./Motivation-page/index.html",
             pomodoro: "./Pomodoro-page/index.html",
             goals: "./Daily-Goals-page/index.html"
         };
